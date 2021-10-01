@@ -1,4 +1,6 @@
 import { data } from "../data";
+import Navbar from "./Navbar";
+import MovieCard from './MovieCard';
 
 function App() {
   return (
@@ -10,9 +12,9 @@ function App() {
         <div className="tab">Favorites</div>
       </div>
       <div className="list">
-        {data.map(movie => {
+        {data.map(movie => (
           <MovieCard movie={movie} />
-        })}
+        ))}
       </div>
      </div>
     </div>
