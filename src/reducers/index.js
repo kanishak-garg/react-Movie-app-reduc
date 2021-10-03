@@ -1,3 +1,4 @@
+import { combineReducers } from "redux";
 import { ADD_TO_FAVORITE, ADD_MOVIE, REMOVE_FROM_FAVORITE,SET_SHOW_FAVORITES } from "../actions";
 
 const initialMovieState = {
@@ -50,9 +51,15 @@ const initialRootState = {
     search: initialSearchState
 }
 
-export default function rootReducer(state=initialRootState,action){
-    return {
-        movies: movies(state.movies,action),
-        search: search(state.search,action)
-    }
-}
+// export default function rootReducer(state=initialRootState,action){
+//     return {
+//         movies: movies(state.movies,action),
+//         search: search(state.search,action)
+//     }
+// }
+// combine reducers method is equivalent to root reducer, combineReducers is inbuilt in redux and handle
+// it in same way as root reducer(manually built)
+export default combineReducers({
+    movies,
+    search
+})
